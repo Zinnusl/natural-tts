@@ -51,7 +51,7 @@ pub struct NaturalTts {
 
     #[cfg(feature = "coqui")]
     #[builder(default = "None")]
-    pub coqui_model: Option<coqui::CoquiModel>,
+    pub coqui_model: Option<crate::coqui::CoquiModel>,
 
     #[cfg(feature = "gtts")]
     #[builder(default = "None")]
