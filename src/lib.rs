@@ -26,6 +26,8 @@ use derive_builder::Builder;
 use std::error::Error;
 use thiserror::Error as TError;
 
+#[cfg(feature = "coqui")]
+use crate::models::coqui::CoquiModel;
 #[cfg(feature = "gtts")]
 use crate::models::gtts;
 #[cfg(feature = "meta")]
@@ -51,7 +53,7 @@ pub struct NaturalTts {
 
     #[cfg(feature = "coqui")]
     #[builder(default = "None")]
-    pub coqui_model: Option<crate::coqui::CoquiModel>,
+    pub coqui_model: Option<coqui::CoquiModel>,
 
     #[cfg(feature = "gtts")]
     #[builder(default = "None")]
